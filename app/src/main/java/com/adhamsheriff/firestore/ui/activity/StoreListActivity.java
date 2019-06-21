@@ -22,7 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
+public class StoreListActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView recyclerView;
     private StoreAdapter adapter;
@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_storelist);
 
         progressBar = findViewById(R.id.progressbar);
         searchlist = findViewById(R.id.searchlist);
@@ -115,7 +115,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void AddData() {
-        Intent intent = new Intent(HomeActivity.this, AddStoreActivity.class);
+        Intent intent = new Intent(StoreListActivity.this, AddStoreActivity.class);
         startActivity(intent);
         finish();
     }
