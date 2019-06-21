@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.adhamsheriff.firestore.R;
 import com.adhamsheriff.firestore.model.StoreName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ProductViewHolder> {
@@ -69,5 +70,10 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ProductViewH
 //            intent.putExtra("product", product);
 //            mCtx.startActivity(intent);
         }
+    }
+
+    public void filterList(ArrayList<StoreName> filteredList) {
+        storeNameList = filteredList;
+        notifyDataSetChanged();
     }
 }
