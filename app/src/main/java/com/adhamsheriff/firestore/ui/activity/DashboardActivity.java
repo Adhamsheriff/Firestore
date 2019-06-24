@@ -37,7 +37,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(iAddStoreActivity);
                 break;
             case R.id.activity_dashboard_button_listcustomer:
-                Intent iStoreListActivity = new Intent(DashboardActivity.this, StoreListActivity.class);
+                Intent iStoreListActivity = new Intent(DashboardActivity.this, ListStoreActivity.class);
                 startActivity(iStoreListActivity);
                 break;
             case R.id.activity_dashboard_button_adduser:

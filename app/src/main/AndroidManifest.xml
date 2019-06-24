@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".ui.activity.DashboardActivity" />
         <activity android:name=".ui.activity.AddStoreActivity" />
-        <activity android:name=".ui.activity.StoreListActivity" />
+        <activity android:name=".ui.activity.ListStoreActivity" />
         <activity android:name=".ui.activity.LoginActivity" />
     </application>
 
