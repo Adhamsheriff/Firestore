@@ -10,14 +10,15 @@ public class UserName implements Serializable {
 
 
     private String id;
-    private String username, password, type, address;
+    private String username, mobilenumber, password, type;
 
     public UserName() {
 
     }
 
-    public UserName(String username, String password, String type) {
+    public UserName(String username, String mobilenumber, String password, String type) {
         this.username = username;
+        this.mobilenumber = mobilenumber;
         this.password = password;
         this.type = type;
     }
@@ -55,5 +56,11 @@ public class UserName implements Serializable {
         this.type = type;
     }
 
+    public String getMobilenumber() {
+        return mobilenumber;
+    }
 
+    public void setMobilenumber(String mobilenumber) {
+        this.mobilenumber = mobilenumber;
+    }
 }
