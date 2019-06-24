@@ -29,11 +29,5 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/activityhome_button_adddata"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:layout_weight=".9"
-        android:text="Add Data" />
+
 </LinearLayout>

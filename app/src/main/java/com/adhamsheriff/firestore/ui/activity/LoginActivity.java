@@ -1,5 +1,6 @@
 package com.adhamsheriff.firestore.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,20 +9,24 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.adhamsheriff.firestore.R;
+import com.adhamsheriff.firestore.model.UserName;
+import com.adhamsheriff.firestore.utils.common.PreferenceManager;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     FirebaseFirestore db;
+    Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        mContext = this;
         db = FirebaseFirestore.getInstance();
 
         findViewById(R.id.button_check_login).setOnClickListener(this);
@@ -37,7 +42,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         if (!queryDocumentSnapshots.isEmpty()) {
-                            Intent intent = new Intent(LoginActivity.this, StoreListActivity.class);
+                            for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                                UserName userName = documentSnapshot.toObject(UserName.class);
+                                userName.setId(documentSnapshot.getId());
+
+                                String userType = userName.getType();
+                                PreferenceManager.setUserType(userType, mContext);
+                                System.out.println("Firestore...LoginActivity...userType..."+userType);
+
+                            }
+
+                            PreferenceManager.setLogin("true", mContext);
+                            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                             startActivity(intent);
                             finish();
                         } else {

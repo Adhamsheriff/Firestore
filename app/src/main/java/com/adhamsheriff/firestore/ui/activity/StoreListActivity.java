@@ -22,7 +22,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StoreListActivity extends AppCompatActivity implements View.OnClickListener {
+public class StoreListActivity extends AppCompatActivity{
 
     private RecyclerView recyclerView;
     private StoreAdapter adapter;
@@ -54,9 +54,6 @@ public class StoreListActivity extends AppCompatActivity implements View.OnClick
 
 
         db = FirebaseFirestore.getInstance();
-
-
-        findViewById(R.id.activityhome_button_adddata).setOnClickListener(this);
 
         db.collection("storename").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -114,18 +111,7 @@ public class StoreListActivity extends AppCompatActivity implements View.OnClick
         adapter.filterList(storeNameFilterList);
     }
 
-    public void AddData() {
-        Intent intent = new Intent(StoreListActivity.this, AddStoreActivity.class);
-        startActivity(intent);
-        finish();
-    }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.activityhome_button_adddata:
-                AddData();
-                break;
-        }
-    }
+
+
 }
