@@ -1,8 +1,9 @@
 package com.adhamsheriff.firestore.ui.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class AddStoreActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddStoreActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText activityaddstore_editText_storename;
     EditText activityaddstore_editText_mobilenumber;
@@ -69,7 +70,7 @@ public class AddStoreActivity extends AppCompatActivity implements View.OnClickL
         return false;
     }
 
-    private void storeData(){
+    private void storeData() {
         String storename = activityaddstore_editText_storename.getText().toString().trim();
         String mobilenumber = activityaddstore_editText_mobilenumber.getText().toString().trim();
         String contactperson = activityaddstore_editText_contactperson.getText().toString().trim();
@@ -91,6 +92,9 @@ public class AddStoreActivity extends AppCompatActivity implements View.OnClickL
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Toast.makeText(AddStoreActivity.this, "Product Added", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(AddStoreActivity.this, DashboardActivity.class);
+                            startActivity(i);
+                            finish();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

@@ -7,20 +7,20 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="10dp"
-    tools:context=".ui.activity.AddStoreActivity">
+    tools:context=".ui.activity.AddUserActivity">
 
     <EditText
-        android:id="@+id/activityaddstore_editText_storename"
+        android:id="@+id/activityadduser_editText_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Store Name"
+        android:hint="Name"
         android:maxLines="1"
         android:inputType="textPersonName"
         android:text="" />
 
     <EditText
-        android:id="@+id/activityaddstore_editText_mobilenumber"
+        android:id="@+id/activityadduser_editText_mobilenumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -31,27 +31,18 @@
         android:text="" />
 
     <EditText
-        android:id="@+id/activityaddstore_editText_contactperson"
+        android:id="@+id/activityadduser_editText_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Contact Person"
+        android:hint="Password"
         android:maxLines="1"
         android:inputType="textPersonName"
         android:text="" />
 
-    <EditText
-        android:id="@+id/activityaddstore_editText_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Address"
-        android:maxLines="1"
-        android:inputType="textPersonName"
-        android:text="" />
 
     <Button
-        android:id="@+id/activityaddstore_button_add"
+        android:id="@+id/activityadduser_button_add"
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

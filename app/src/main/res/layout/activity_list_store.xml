@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.activity.StoreListActivity">
+    tools:context=".ui.activity.ListStoreActivity">
 
     <EditText
         android:id="@+id/searchlist"
@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:layout_weight=".2">
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_storelist"
+            android:id="@+id/recyclerview_liststore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -29,11 +29,5 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/activityhome_button_adddata"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:layout_weight=".9"
-        android:text="Add Data" />
+
 </LinearLayout>
